@@ -1,0 +1,202 @@
+.about {
+    min-height: 100vh;
+    padding: 100px 20px;
+    background-color: #050505;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+}
+
+/* Image Section */
+.imageContainer {
+    position: relative;
+    width: 100%;
+    height: 600px;
+    /* Fixed height for consistency */
+}
+
+.imageWrapper {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    border-radius: 2px;
+}
+
+.image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.imageWrapper:hover .image {
+    transform: scale(1.03);
+}
+
+.imageOverlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.2);
+    /* Slight overlay to ensure text contrast if needed, mostly for mood */
+}
+
+/* Floating Box with Experience */
+.floatingBox {
+    position: absolute;
+    bottom: -30px;
+    right: -30px;
+    background-color: #c5a059;
+    padding: 30px 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    z-index: 2;
+}
+
+.floatingBox .statNumber {
+    font-size: 3.5rem;
+    font-weight: bold;
+    color: #000;
+    line-height: 1;
+    font-family: 'Cinzel', serif;
+}
+
+.floatingLabel {
+    color: #000;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 5px;
+    text-align: center;
+}
+
+/* Text Content Section */
+.contentWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.heading {
+    font-size: 3.5rem;
+    color: #fff;
+    line-height: 1.1;
+    font-family: 'Cinzel', serif;
+    text-transform: uppercase;
+}
+
+.goldText {
+    color: #c5a059;
+}
+
+.divider {
+    width: 80px;
+    height: 4px;
+    background-color: #c5a059;
+}
+
+.text {
+    font-size: 1.1rem;
+    color: #ccc;
+    line-height: 1.8;
+    font-weight: 300;
+    max-width: 90%;
+}
+
+/* Stats Grid */
+.statsGrid {
+    display: flex;
+    gap: 60px;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.statItem {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.statNumber {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #c5a059;
+    font-family: 'Cinzel', serif;
+}
+
+.statLabel {
+    font-size: 0.9rem;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.learnMoreBtn {
+    margin-top: 30px;
+    align-self: flex-start;
+    background: transparent;
+    border: 1px solid #fff;
+    color: #fff;
+    padding: 15px 35px;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.learnMoreBtn:hover {
+    background: #fff;
+    color: #000;
+}
+
+/* Responsive */
+@media (max-width: 968px) {
+    .container {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+
+    .imageContainer {
+        height: 400px;
+    }
+
+    .heading {
+        font-size: 2.5rem;
+    }
+
+    .floatingBox {
+        right: 20px;
+        bottom: -20px;
+        padding: 20px 30px;
+    }
+
+    .floatingBox .statNumber {
+        font-size: 2.5rem;
+    }
+
+    .statsGrid {
+        flex-wrap: wrap;
+        gap: 40px;
+    }
+}

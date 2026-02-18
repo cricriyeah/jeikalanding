@@ -1,0 +1,128 @@
+.hero {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    color: #fff;
+}
+
+.videoBackground {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100vw;
+    height: 100vh;
+    min-width: 177.77vh;
+    /* Aspect ratio 16:9 */
+    min-height: 56.25vw;
+    /* Aspect ratio 16:9 */
+    z-index: -2;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+    pointer-events: none;
+    /* Prevent user interaction with YouTube video */
+    border: none;
+}
+
+.videoOverlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.7) 85%, #050505 100%);
+    /* Fade to section bg color */
+    z-index: -1;
+}
+
+.content {
+    text-align: center;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    padding: 0 20px;
+}
+
+.logoContainer {
+    margin-bottom: 20px;
+}
+
+.sketchLogo {
+    border: 2px solid #c5a059;
+    padding: 15px 30px;
+    display: inline-block;
+    position: relative;
+}
+
+/* Simulate the "X" in the sketch box */
+.sketchLogo::before,
+.sketchLogo::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: 1px solid transparent;
+}
+
+.logoText {
+    font-family: 'Cinzel', serif;
+    font-size: 2rem;
+    color: #c5a059;
+    letter-spacing: 5px;
+}
+
+.title {
+    font-size: 4rem;
+    font-weight: 300;
+    line-height: 1.2;
+    letter-spacing: 2px;
+    margin: 0;
+    background: linear-gradient(to right, #fff, #c5a059);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    font-weight: 300;
+    letter-spacing: 1px;
+    max-width: 600px;
+    margin: 0 auto;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.ctaButton {
+    padding: 15px 40px;
+    background: transparent;
+    border: 1px solid #c5a059;
+    color: #c5a059;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 20px;
+}
+
+.ctaButton:hover {
+    background: #c5a059;
+    color: #000;
+    box-shadow: 0 0 20px rgba(197, 160, 89, 0.3);
+}
+
+@media (max-width: 768px) {
+    .title {
+        font-size: 2.5rem;
+    }
+
+    .subtitle {
+        font-size: 1rem;
+    }
+}
