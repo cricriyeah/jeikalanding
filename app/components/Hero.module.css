@@ -9,7 +9,7 @@
     color: #fff;
 }
 
-.videoBackground {
+.videoWrapper {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -21,9 +21,21 @@
     /* Aspect ratio 16:9 */
     z-index: -2;
     transform: translate(-50%, -50%);
-    object-fit: cover;
     pointer-events: none;
     /* Prevent user interaction with YouTube video */
+    overflow: hidden;
+}
+
+.videoBackground {
+    width: 100%;
+    height: 100%;
+}
+
+/* Ensure the iframe created by YouTube API fills the wrapper */
+.videoWrapper iframe {
+    width: 100% !important;
+    height: 100% !important;
+    pointer-events: none;
     border: none;
 }
 
