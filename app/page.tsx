@@ -5,7 +5,7 @@ import Contact from "./components/Contact";
 
 export default function Home() {
   return (
-    <main>
+    <main style={{ overflowX: 'hidden', maxWidth: '100vw' }}>
       <Navbar />
       <Hero />
       <About />
